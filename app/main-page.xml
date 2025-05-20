@@ -1,0 +1,25 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo">
+    <ActionBar title="Steps App" icon="" />
+
+    <StackLayout class="p-4">
+        <TextView 
+            hint="Enter your step here..." 
+            text="{{ text }}" 
+            class="p-2 mb-4 border rounded-lg"
+            height="100"
+            textWrap="true" />
+        
+        <Button text="Add Step" tap="{{ onAdd }}" class="bg-blue-500 text-white font-bold py-2 px-4 rounded" />
+        
+        <ScrollView height="400" class="mt-4">
+            <StackLayout>
+                <Label text="Steps:" class="text-xl font-bold mb-2" />
+                <ListView items="{{ steps }}" class="list-group">
+                    <ListView.itemTemplate>
+                        <Label text="{{ $value }}" textWrap="true" class="p-2 border-b" />
+                    </ListView.itemTemplate>
+                </ListView>
+            </StackLayout>
+        </ScrollView>
+    </StackLayout>
+</Page>
